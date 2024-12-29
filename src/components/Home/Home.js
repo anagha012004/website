@@ -1,10 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
+
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-
+import Tilt from "react-parallax-tilt";
+import Anagha from "../../Assets/anagha.png"
 function Home() {
   return (
     <section>
@@ -20,9 +21,10 @@ function Home() {
                 </span>
               </h1>
 
+
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> SOUMYAJIT BEHERA</strong>
+                <strong className="main-name"> Anagha Badhe</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -31,12 +33,15 @@ function Home() {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
+            <Tilt>
               <img
-                src={homeLogo}
+                src={Anagha}
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
+                
               />
+              </Tilt>
             </Col>
           </Row>
         </Container>
