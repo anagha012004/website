@@ -11,6 +11,9 @@ import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineMail,
+  AiOutlineTeam,
+  AiOutlineTrophy,
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
@@ -37,7 +40,6 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-    
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -82,6 +84,26 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
+                to="/internships"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineTeam style={{ marginBottom: "2px" }} /> Experience
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/hackathons"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineTrophy style={{ marginBottom: "2px" }} /> Hackathons
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
@@ -89,7 +111,15 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-          
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/contact"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineMail style={{ marginBottom: "2px" }} /> Contact
+              </Nav.Link>
+            </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button

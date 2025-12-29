@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
+import Internships from "./components/Internships";
+import Hackathons from "./components/Hackathons";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
+import FloatingActionButton from "./components/FloatingActionButton";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,11 +21,20 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+// Initialize AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const [load, upadateLoad] = useState(true);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-cubic',
+    });
+    
     const timer = setTimeout(() => {
       upadateLoad(false);
     }, 1200);
@@ -33,11 +47,15 @@ function App() {
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
+        <FloatingActionButton />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/about" element={<About />} />
+          <Route path="/internships" element={<Internships />} />
+          <Route path="/hackathons" element={<Hackathons />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>

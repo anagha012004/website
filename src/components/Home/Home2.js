@@ -19,7 +19,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-            I am a third-year Computer Science and Engineering student with skills in <br/>full-stack development, problem-solving, and database management.
+            I am a final-year Computer Science and Engineering student with skills in <br/>full-stack development, problem-solving, and database management.
 
  
 
@@ -27,7 +27,7 @@ function Home2() {
             
               <br />I am fluent in classics like
               <i>
-                <b className="purple"> Java, React.js, Node.js, PowerApps, and MongoDB. </b>
+                <b className="purple"> Java, MERN, PowerApps, Spring Boot, RabbitMQ, Devops, etc. </b>
               </i>
               <br />
               <br />

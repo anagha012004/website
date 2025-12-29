@@ -1,11 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-
-import Techstack from "./Techstack";
+import AnimatedSection from "../AnimatedSection";
+import SkillsShowcase from "../SkillsShowcase";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
-import Toolstack from "./Toolstack";
+import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 
 function About() {
   return (
@@ -21,31 +22,49 @@ function About() {
               paddingBottom: "50px",
             }}
           >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="purple">I'M</strong>
-            </h1>
-            <Aboutcard />
+            <AnimatedSection>
+              <motion.h1 
+                style={{ fontSize: "2.1em", paddingBottom: "20px" }}
+                whileHover={{ 
+                  scale: 1.05,
+                  textShadow: "0px 0px 8px rgb(199, 112, 240)"
+                }}
+              >
+                Know Who <strong className="purple">I'M</strong>
+              </motion.h1>
+              <Aboutcard />
+            </AnimatedSection>
           </Col>
           <Col
             md={5}
             style={{ paddingTop: "120px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            <AnimatedSection delay={0.3}>
+              <Tilt
+                tiltMaxAngleX={10}
+                tiltMaxAngleY={10}
+                perspective={1000}
+                scale={1.02}
+                transitionSpeed={2000}
+                gyroscope={true}
+              >
+                <motion.img 
+                  src={laptopImg} 
+                  alt="about" 
+                  className="img-fluid"
+                  whileHover={{ 
+                    scale: 1.05,
+                    filter: "brightness(1.1)"
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Tilt>
+            </AnimatedSection>
           </Col>
         </Row>
-        <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
-        </h1>
-
-        <Techstack />
-
-        <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
-        </h1>
-        <Toolstack />
-
-     
+        
+        <SkillsShowcase />
       </Container>
     </Container>
   );
